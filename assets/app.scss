@@ -1,0 +1,103 @@
+@font-face {
+  font-family: 'IRANYekan';
+  font-weight: 200;
+  src: url('~/assets/fonts/Thin.woff');
+}
+@font-face {
+  font-family: 'IRANYekan';
+  font-weight: 300;
+  src: url('~/assets/fonts/Light.woff');
+}
+@font-face {
+  font-family: 'IRANYekan';
+  font-weight: 400;
+  src: url('~/assets/fonts/Regular.woff');
+}
+@font-face {
+  font-family: 'IRANYekan';
+  font-weight: 500;
+  src: url('~/assets/fonts/Medium.woff');
+}
+@font-face {
+  font-family: 'IRANYekan';
+  font-weight: 700;
+  src: url('~/assets/fonts/Bold.woff');
+}
+@font-face {
+  font-family: 'IRANYekan';
+  font-weight: 800;
+  src: url('~/assets/fonts/Black.woff');
+}
+@font-face {
+  font-family: 'IRANYekan';
+  font-weight: 900;
+  src: url('~/assets/fonts/ExtraBlack.woff');
+}
+@font-face {
+  font-family: 'IRANYekan';
+  font-weight: 300;
+  src: url('~/assets/fonts/Light.woff');
+}
+
+// // customize toast styles
+// .toasted {
+//   direction: rtl;
+//   height: 48px !important;
+//   font-family: IRANYekan;
+//   font-weight: 400;
+//   font-size: 0.75rem !important;
+//   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1) !important;
+//   border-radius: 8px !important;
+//   .toast-close {
+//     display: inline-block;
+//     width: 15px;
+//     height: 15px;
+//     background-size: 10px;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     margin-right: 4px !important;
+//     margin-left: -4px !important;
+//   }
+//   .toast-info {
+//     display: inline-block;
+//     width: 15px;
+//     height: 15px;
+//     background-size: 15px;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     margin-right: -4px;
+//     margin-left: 4px;
+//   }
+//   &.success {
+//     background: #eafcf7 !important;
+//     border: 1px solid #92eccf !important;
+//     color: #0bb07b !important;
+//     .toast-close {
+//       background-image: url('./images/close.svg');
+//     }
+//     .toast-info {
+//       background-image: url('./images/info.svg');
+//     }
+//   }
+
+//   &.error {
+//     background: #ffebee !important;
+//     border: 1px solid #e57373 !important;
+//     color: #e02020 !important;
+//     .toast-close {
+//       background-image: url('./images/close-e.svg?inline');
+//     }
+//     .toast-info {
+//       background-image: url('./images/info-e.svg?inline');
+//     }
+//   }
+// }
+
+// .v-application * {
+//   font-family: IRANYekan !important;
+// }
+
+.v-btn:focus::before {
+  display: none !important;
+  opacity: 0 !important
+}
