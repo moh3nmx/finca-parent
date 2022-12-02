@@ -3,11 +3,12 @@
     <v-list dark class="mt-16 pt-4" shaped>
       <v-list-item two-line>
         <v-list-item-avatar size="48">
-          <v-img src="https://i.pravatar.cc/50"></v-img>
+          <v-icon size="48">mdi-account-circle</v-icon>
+          <!-- <v-img src="https://i.pravatar.cc/50"></v-img> -->
         </v-list-item-avatar>
         <v-list-item-content>
-          <v-list-item-title>رضا نجفی</v-list-item-title>
-          <v-list-item-subtitle class="mt-2">09123456789 </v-list-item-subtitle>
+          <v-list-item-title>{{ userFullName }}</v-list-item-title>
+          <v-list-item-subtitle class="mt-2">0{{ userPhoneNumber }} </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
       <v-divider class="my-4"></v-divider>
@@ -57,12 +58,14 @@ export default({
           icon: 'mdi-certificate-outline',
           text: 'گواهی/مدرک',
           to: '/certificate',
+          disabled: true,
           exact: true,
           color: '#CDDC39'
         },
         {
           icon: 'mdi-trophy',
           text: 'دستاورد‌ها',
+          disabled: true,
           to: '/achievments',
           exact: true,
           color: 'amber'
@@ -72,7 +75,7 @@ export default({
           text: 'خروج',
           color: 'error',
           on: {
-            click: () => { console.log('logout');}
+            click: () => { this.$auth.logout()}
           },
           exact: true
         }

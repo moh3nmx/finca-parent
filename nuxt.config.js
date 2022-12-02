@@ -29,7 +29,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/init'
+    '~/plugins/init',
+    '~/plugins/service',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -47,13 +48,69 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
+    'nuxt-mq',
     '@nuxtjs/axios',
+    '@nuxtjs/auth',
+    'nuxt-svg-loader',
+    '@nuxtjs/toast',
   ],
+
+  'mq': {
+    breakpoints: { // default breakpoints - customize this
+      xs: 600,
+      sm: 960,
+      md: 1264,
+      lg: 1921,
+      xl: Infinity,
+    },
+    defaultBreakpoint: 'lg' // customize this for SSR
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
+    baseURL: 'https://api.finca.ir/api/v1',
+  },
+
+  toast: {
+    position: 'bottom-left',
+    iconPack: 'custom-class',
+    duration: 10000,
+    icon: {
+      name: 'toast-info',
+    },
+    action: {
+      icon: 'toast-close',
+      onClick: (e, toastObject) => {
+        toastObject.goAway(0)
+      },
+    },
+  },
+
+  auth: {
+    redirect: {
+      login: '/auth/login',
+      logout: '/auth/login',
+      callback: '/auth/login',
+      home: false
+    },
+    strategies: {
+      local: {
+        endpoints: {
+          login: false,
+          user: {
+            url: '/Parent',
+            method: 'get',
+            propertyName: false,
+            autoFetch: true
+          },
+          logout: false
+        },
+        autoFetchUser: true,
+        tokenType: 'Bearer'
+      }
+    },
+    plugins: ['~/plugins/api.service']
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify

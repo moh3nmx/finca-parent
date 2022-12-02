@@ -13,6 +13,7 @@
     </v-app-bar>
     <panel-sidebar />
     <v-main class="mt-16">
+        <base-loading :loading="$store.state.loading" />
         <Nuxt />
     </v-main>
   </v-app>
@@ -21,6 +22,7 @@
 <script>
 export default {
   name: "DefaultLayout",
+  middleware: 'need_auth',
   data() {
     return {
       
